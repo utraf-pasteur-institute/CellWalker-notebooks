@@ -6,6 +6,7 @@ import random
 import copy
 import numpy as np
 import stackview
+from skimage import measure
 
 from tkinter import Tk, filedialog
 from matplotlib import pyplot as plt
@@ -181,6 +182,16 @@ class Seg_viewer():
         #files = filedialog.askopenfilename(multiple=True)    # List of selected files will be set button's file attribute.
         dirname = filedialog.askdirectory(title=title)
         return dirname
+
+    def browse_file(self, title="Choose a file name"):
+        #clear_output()                                         # Button is deleted after it is clicked.
+        root = Tk()
+        root.withdraw()                                        # Hide the main window.
+        root.call('wm', 'attributes', '.', '-topmost', True)   # Raise the root to the top of all windows.
+        files = filedialog.askopenfilename(multiple=True)    # List of selected files will be set button's file attribute.
+        #dirname = filedialog.askdirectory(title=title)
+        return dirname
+
     
     def create_seg_viewer(self, as_placeholder=True):
         if as_placeholder:
@@ -221,6 +232,7 @@ class Seg_viewer():
         
         self.recolor_button = widgets.Button(description="Recolor segments", layout={'width': '150px'}, tooltip="Recolor segments")
         self.skel_button = widgets.Button(description="Skeletonize", layout={'width': '150px'}, tooltip="Skeletonize selected segments")
+        self.exportobj_button = widgets.Button(description="Export OBJ", layout={'width': '150px'}, tooltip="Export OBJ file for selected segments")
         #Function for "Find protrusions" is not yet implemented here.
         #self.protr_button = widgets.Button(description="Find protrusions", layout={'width': '150px'}, tooltip="Identify protrusions of selected segments")
         
@@ -228,7 +240,8 @@ class Seg_viewer():
 
         self.labels_picker = widgets.VBox([self.seg_list] +
                                           [widgets.VBox([self.recolor_button,
-                                                         self.skel_button
+                                                         self.skel_button,
+                                                         self.exportobj_button
                                                          #self.protr_button
                                                         ])]
                                          )
@@ -237,6 +250,7 @@ class Seg_viewer():
 
         self.recolor_button.on_click(self.recolor_segments())
         self.skel_button.on_click(self.skeletonize_selected_labels())
+        self.exportobj_button.on_click(self.exportobj_selected_labels())
         #self.protr_button.on_click(self.identify_protrusions()) # Not yet defined.
 
     def rgb_hex_to_dec(self, hexcolor):
@@ -267,6 +281,64 @@ class Seg_viewer():
 
         return(recolor_segments)
 
+    def get_obj(self, obj_name='default_obj', verts=None, edges=None, faces=None, v_num_offset=0, material_class='default'):
+        # Function to create obj format string which can be written to an obj file.
+        obj = "o " + str(obj_name) + "\n"
+
+        for item in verts:
+            obj += "v {0} {1} {2}\n".format('{:.6f}'.format(item[0]),
+                                            '{:.6f}'.format(item[1]),
+                                            '{:.6f}'.format(item[2]))
+
+        if material_class.strip() == '':
+            material_class = 'default'
+        obj += "usemtl " + material_class + "\n"
+        
+        for item in faces:
+            obj += "f " + " ".join([str(x+v_num_offset) for x in item]) + "\n"
+        v_num_offset += len(verts)
+
+        return(obj, v_num_offset)
+
+    def exportobj_selected_labels(self):
+        def exportobj_selected_labels(b):
+                        
+            self.dirname_output = self.browse_dir(title="Choose output folder")
+            label_list = []
+            img = copy.copy(self.stack_seg)
+            selected_label_count = 0
+            for container in self.seg_viewer.children[2-self.em_image_absent].children[0].children:
+                cp, lp = container.children # Get colorpicker (cp) and labelpicker (lp)
+                label = int(cp.description.replace("Seg ",""))
+                
+                if lp.value:
+                    #print("*", label, lp.value) # Uncomment to see selected segment label.
+                    img[img == label] = 255
+                    label_list.append(label)
+                    selected_label_count += 1
+                    #print("*", np.unique(img)) # Uncomment to see unique segment labels in the image.
+            if selected_label_count == 0:
+                print("Please select at least one segment label before performing segmentation.")
+                return(None)
+
+            voxel_size_nm = (32,32,30) # This is same as the voxel size in nanometers (give in x,y,z or h,w,z order)
+            scale_nm_to_um = 0.001
+            voxel_size_um = tuple(np.array(voxel_size_nm)*scale_nm_to_um)
+            
+            # Create surface using marching cubes algorithm. Default method is Lewiner.
+            verts, faces, normals, values = measure.marching_cubes(img, step_size=1, spacing=voxel_size_um)
+            
+            obj_name = "_".join([str(x) for x in label_list])
+            # Get obj formatted string
+            obj, v_num_offset = self.get_obj(obj_name="Seg_"+obj_name, verts=verts, faces=faces, v_num_offset=1, material_class='default')
+            
+            # Write obj file
+            objfilename = obj_name + ".obj"
+            with open(self.dirname_output + "/" + objfilename,'w') as o:
+                o.write(obj)
+        
+        return(exportobj_selected_labels)
+            
     def skeletonize_selected_labels(self):
         def skeletonize_selected_labels(b):
             
@@ -290,7 +362,7 @@ class Seg_viewer():
             print("Please see function skeletonize_selected_labels() in the segviewer.py file to define custom voxel size.") 
             self.skel = skeletontools.skeletonize(img, 1, 1000, voxel_size_nm)
         return(skeletonize_selected_labels)
-    
+
     def get_skel(self, label=255, downsample=0):
         if self.skel is not None:
             return(self.skel[label].downsample(downsample))

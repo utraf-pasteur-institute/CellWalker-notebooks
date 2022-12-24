@@ -144,8 +144,8 @@ class Seg_viewer():
         self.em_label_widget = widgets.Label(value="EM images: Not loaded")
         self.seg_label_widget = widgets.Label(value="Segmentation images: Not loaded")
 
-        self.dirname_em_widget.value = "sample_data/C14_mip3_crop_image_exports/EM"
-        self.dirname_seg_widget.value = "sample_data/C14_mip3_crop_image_exports/segmentation"
+        self.dirname_em_widget.value = "../sample_data/C14_mip3_crop_image_exports/EM"
+        self.dirname_seg_widget.value = "../sample_data/C14_mip3_crop_image_exports/segmentation"
 
         self.dirname_em_browse_widget = widgets.Button(layout={'width':'35px'}, style={'button_color':'white'}, icon="fa-folder-open", tooltip='Choose folder')
         self.dirname_seg_browse_widget = widgets.Button(layout={'width':'35px'}, style={'button_color':'white'}, icon="fa-folder-open", tooltip='Choose folder')

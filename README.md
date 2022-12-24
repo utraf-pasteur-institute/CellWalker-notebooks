@@ -12,7 +12,7 @@ Contents:<br>
 The notebook named 'Segmentation_CNN_UNET.ipynb' provides a protocol for automated segmentation of microscopy images using a UNET convolutional neural network (CNN) architecture.
 It is recommended to run this notebook on cloud computing platforms such as Google Colab. This notebook has been tested on Google Colab.<br>
 
-To open the notebook on Google Colab, upload it to your Google Drive and open it inside the browser.
+To open the notebook on Google Colab, upload it to your Google Drive and open it in the browser.
 Once open in Google Colab, the instructions in the notebook will guide you regarding functionality of each step. For each step, after setting required values, you can click on the 'Play' button to execute the step.
 
 If you want to use the sample data provided in the repository then remember to upload the folders 'sample_data/C2-113_16-46_cropped1_for_UNET_training' and 'sample_data/C2-113_16-46_cropped3' to the Google Drive.<br>

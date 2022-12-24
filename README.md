@@ -91,7 +91,7 @@ If you want to see the installed packages and their versions-
 ```bash
 conda list
 ```
-Or you can also use 'pip list' to see the list of installed packages.
+Or you can also use ```pip list``` to see the list of installed packages.
 
 Uninstall pyzmq package.
 ```bash

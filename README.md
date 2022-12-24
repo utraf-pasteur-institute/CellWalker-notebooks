@@ -9,16 +9,14 @@ Contents:<br>
 <br>
 
 # Automated segmentation
-The notebook named 'Segmentation_CNN_UNET.ipynb' provides a protocol for automated segmentation of microscopy images using a UNET convolutional neural network (CNN) architecture.
-It is recommended to run this notebook on cloud computing platforms such as Google Colab. This notebook has been tested on Google Colab.<br>
+The notebook named 'Segmentation_CNN_UNET.ipynb' provides a protocol for automated segmentation of microscopy images using a UNET convolutional neural network (CNN) architecture. It is recommended to run this notebook on cloud computing platforms such as Google Colab. This notebook has been tested on Google Colab.<br>
 
 To open the notebook on Google Colab, upload it to your Google Drive and open it in the browser.
-Once open in Google Colab, the instructions in the notebook will guide you regarding functionality of each step. For each step, after setting required values, you can click on the 'Play' button to execute the step.
+The Google Colab will automatically open your notebook allowing you to edit and/or run it. The instructions in the notebook will guide you regarding the functionality of each step. A step can be executed by clicking on the 'Play' button.<br>
 
-If you want to use the sample data provided in the repository then remember to upload the folders 'sample_data/C2-113_16-46_cropped1_for_UNET_training' and 'sample_data/C2-113_16-46_cropped3' to the Google Drive.<br>
-In general any data that is on your Google Drive can be accessed from the notebooks opened in Google Colab.
+If you want to use the sample data provided in the repository then remember to upload the folders 'sample_data/C2-113_16-46_cropped1_for_UNET_training' and 'sample_data/C2-113_16-46_cropped3' to the Google Drive. In general, any data that is on your Google Drive can be accessed from the notebooks opened in Google Colab.<br>
 
-For more information on how to use Google Colab, please click <a href="https://colab.research.google.com/" target="_blank">here</a>.
+For more information on how to use Google Colab, please visit <a href="https://colab.research.google.com/" target="_blank">[here](https://colab.research.google.com/)</a>.
 
 # Installation
 The instructions assume Windows operating system. Most of these commands also work on linux systems.

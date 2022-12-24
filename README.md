@@ -16,7 +16,7 @@ The Google Colab will automatically open your notebook allowing you to edit and/
 
 If you want to use the sample data provided in the repository then remember to upload the folders 'sample_data/C2-113_16-46_cropped1_for_UNET_training' and 'sample_data/C2-113_16-46_cropped3' to the Google Drive. In general, any data that is on your Google Drive can be accessed from the notebooks opened in Google Colab.<br>
 
-For more information on how to use Google Colab, please visit <a href="https://colab.research.google.com/" target="_blank">[here](https://colab.research.google.com/)</a>.
+For more information on how to use Google Colab, please visit <a href="https://colab.research.google.com/" target="_blank">https://colab.research.google.com/</a>.
 
 # Installation
 The instructions assume Windows operating system. Most of these commands also work on linux systems.

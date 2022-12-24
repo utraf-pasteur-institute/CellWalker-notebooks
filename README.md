@@ -72,7 +72,7 @@ conda deactivate
 ```bash
 jupyter notebook
 ```
-On linux, the command is ```bash jupyter-notebook```<Br>
+On linux, the command is ```jupyter-notebook```<Br>
 Browse src folder inside the folder of the repository.<br>
 Choose the notebook (.ipynb file) which you want to run.<br>
 When the notebook opens, select the environment 'cellwalker-notebooks-env' from the menu option "Kernel>Change kernel".

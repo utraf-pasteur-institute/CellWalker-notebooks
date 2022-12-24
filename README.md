@@ -111,6 +111,8 @@ conda deactivate
 ```
 
 Re-launch the Jupyter-notebook
-```jupyter notebook```
+```bash
+jupyter notebook
+```
 On linux, the command is 'jupyter-notebook'.
 

@@ -4,7 +4,7 @@ This repository is a part of the CellWalker pipeline. It contains the IPython no
 Contents:<br>
 <ul>
 <li> ./src/Segmentation_CNN_UNET.ipynb </li>
-<li> Segmentation_visualizer.ipynb </li>
+<li> ./src/Segmentation_visualizer.ipynb </li>
 </ul>
 <br>
 
@@ -18,27 +18,29 @@ If you want to use the sample data provided in the repository then remember to u
 
 For more information on how to use Google Colab, please visit <a href="https://colab.research.google.com/" target="_blank">https://colab.research.google.com/</a>.
 
-# Installation
+# Visualization of segmentation and exporting 3D objects
+The notebook named 'Segmentation_visualizer.ipynb' provides an interface to view segmented 3D image stacks (similar to those created by the 'Segmentation_CNN_UNET.ipynb' notebook). It also allows exporting selected segments as 3D objects in generic Wavefront OBJ format. The <a href="">CellWalker-blender addon</a> can be used to open such exported OBJ files for further analysis.<br>
+
+Installation of correct Python dependencies is recommended to run the 'Segmentation_visualizer.ipynb' notebook. Please follow the installation instructions below.
+
+# Installation of Anaconda Python environment
 The instructions assume Windows operating system. Most of these commands also work on linux systems.
 
 This installation is required for the Segmentation_visualizer.ipynb
 ## Download and install Anaconda
-Please see here to find more information.
+Please visit <a href="https://www.anaconda.com/products/distribution">https://www.anaconda.com/products/distribution</a> to find more information.
 
 ## Create environment for CellWalker-notebooks
 It is recommended to work inside an environment in order to avoid conflicts of package versions.<br>
-
-Open Anaconda Prompt or Anaconda Powershell Prompt and run following commands
+Open Anaconda Prompt or Anaconda Powershell Prompt and run the following commands.
 
 ```bash
 cd path_to_folder_where_you_downloaded_the_repository
-```
-
-```bash
 conda env create -f cellwalker-notebooks-env
 ```
+#### Optional
+If you already have the Anaconda python environment with the same name then it is advised to remove the old environment and start fresh.<br>
 
-Optional: If you already have the Anaconda python environment with the same name then it is advised to remove the old environment and start fresh.
 To list existing environments-
 ```bash
 conda info --envs

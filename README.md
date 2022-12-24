@@ -103,7 +103,7 @@ Re-install pyzmq package so that it upgrades to the latest version.
 conda install pyzmq
 ```
 
-Install the ipykernel again because uninstalling pyzmq also uninstalls ipykernel related packages.
+Install the ipykernel package again because uninstalling pyzmq also uninstalls ipykernel related packages.
 ```bash
 conda install -c anaconda ipykernel
 python -m ipykernel install --user --name=cellwalker-notebooks-env

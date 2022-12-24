@@ -69,7 +69,8 @@ conda deactivate
 ```
 
 ## Launch Jupyter-notebook
-```bash jupyter notebook
+```bash
+jupyter notebook
 ```
 On linux, the command is ```bash jupyter-notebook```<Br>
 Browse src folder inside the folder of the repository.<br>
@@ -83,21 +84,31 @@ If you get an error related to the pyzmq package, then do the following.<br>
 
 Uninstall pyzmq version that is installed in your environment by default. You can check the version by using pip list or conda list commands from Anaconda prompt on Windows.
 Activate the required environment.
-```conda activate cellwalker-notebooks-env```
+```bash
+conda activate cellwalker-notebooks-env
+```
 If you want to see the installed packages and their versions-
-```conda list```
+```bash
+conda list
+```
 Or you can also use 'pip list' to see the list of installed packages.
 
 Uninstall pyzmq package.
-```conda uninstall pyzmq```
+```bash
+conda uninstall pyzmq
+```
 
 Re-install pyzmq package so that it upgrades to the latest version.
-```conda install pyzmq```
+```bash
+conda install pyzmq
+```
 
 Install the ipykernel again because uninstalling pyzmq also uninstalls ipykernel related packages.
-```conda install -c anaconda ipykernel```
-```python -m ipykernel install --user --name=cellwalker-notebooks-env```
-```conda deactivate```
+```bash
+conda install -c anaconda ipykernel
+python -m ipykernel install --user --name=cellwalker-notebooks-env
+conda deactivate
+```
 
 Re-launch the Jupyter-notebook
 ```jupyter notebook```

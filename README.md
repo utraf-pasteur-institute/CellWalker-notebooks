@@ -23,7 +23,7 @@ The notebook named 'Segmentation_visualizer.ipynb' provides an interface to view
 
 Installation of correct Python dependencies is recommended to run the 'Segmentation_visualizer.ipynb' notebook. Please follow the installation instructions below.
 
-# Installation of Anaconda Python environment
+## Installation of Anaconda Python environment
 The instructions assume Windows operating system. Most of these commands also work on linux systems.
 
 This installation is required for the Segmentation_visualizer.ipynb
@@ -77,12 +77,11 @@ On linux, the command is ```jupyter-notebook```<Br>
 Browse src folder inside the folder of the repository.<br>
 Choose the notebook (.ipynb file) which you want to run. In this case- 'Segmentation_visualizer.ipynb'<br>
 When the notebook opens, select the environment 'cellwalker-notebooks-env' from the menu option **"**Kernel>Change kernel"**.<br>
-Use Ctrl + Enter or Shift + Enter on the keyboard to execute each cell (or step) in the notebook.
+Use Ctrl + Enter or Shift + Enter on the keyboard to execute each cell (or step) in the notebook.<br>
+The notebook is self explanatory and instructions required to run specific steps can be found inside the notebook.
   
-# Notebook functionalities
 
-
-# Troubleshooting
+## Troubleshooting
 Sometimes Anaconda's default package versions do not allow ipython kernels to run. This will likely happen with Windows versions of Anaconda.
 If you get an error related to the pyzmq package, then do the following.<br>
 

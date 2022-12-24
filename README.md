@@ -32,9 +32,13 @@ It is recommended to work inside an environment in order to avoid conflicts of p
 
 Open Anaconda Prompt or Anaconda Powershell Prompt and run following commands
 
-```cd <folder where you downloaded the repository>```
+```bash
+cd <folder where you downloaded the repository>
+```
 
-```conda env create -f cellwalker-notebooks-env```
+```bash
+conda env create -f cellwalker-notebooks-env
+```
 
 Optional: If you already have the Anaconda python environment with the same name then it is advised to remove the old environment and start fresh.
 To list existing environments-

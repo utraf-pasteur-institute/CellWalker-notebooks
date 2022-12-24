@@ -69,13 +69,17 @@ conda deactivate
 ```
 
 ## Launch Jupyter-notebook
+Now you are all set to run the 'Segmentation_visualizer.ipynb' notebook in the Jupyter notebook's user interface. From Anaconda prompt, launch your jupyter notebook GUI.
 ```bash
 jupyter notebook
 ```
 On linux, the command is ```jupyter-notebook```<Br>
 Browse src folder inside the folder of the repository.<br>
-Choose the notebook (.ipynb file) which you want to run.<br>
-When the notebook opens, select the environment 'cellwalker-notebooks-env' from the menu option "Kernel>Change kernel".
+Choose the notebook (.ipynb file) which you want to run. In this case- 'Segmentation_visualizer.ipynb'<br>
+When the notebook opens, select the environment 'cellwalker-notebooks-env' from the menu option **"**Kernel>Change kernel"**.<br>
+Use Ctrl + Enter or Shift + Enter on the keyboard to execute each cell (or step) in the notebook.
+  
+# Notebook functionalities
 
 
 # Troubleshooting

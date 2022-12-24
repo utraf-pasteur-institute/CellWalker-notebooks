@@ -33,7 +33,7 @@ It is recommended to work inside an environment in order to avoid conflicts of p
 Open Anaconda Prompt or Anaconda Powershell Prompt and run following commands
 
 ```bash
-cd <folder where you downloaded the repository>
+cd path_to_folder_where_you_downloaded_the_repository
 ```
 
 ```bash
@@ -42,26 +42,36 @@ conda env create -f cellwalker-notebooks-env
 
 Optional: If you already have the Anaconda python environment with the same name then it is advised to remove the old environment and start fresh.
 To list existing environments-
-```conda info --envs```
+```bash
+conda info --envs
+```
 
 To remove an environment
-```conda remove -n cellwalker-notebooks-env --all```
-
+```bash
+conda remove -n cellwalker-notebooks-env --all
+```
 
 ## Activate the environment
-```conda activate cellwalker-notebooks-env```
+```bash
+conda activate cellwalker-notebooks-env
+```
 Now you will see the prompt changes from 'base' to 'cellwalker-notebooks-env'
 
 ## Add ipykernel to environment so that the environment can be used in Jupyter-notebook
-```conda install -c anaconda ipykernel```
-```python -m ipykernel install --user --name=cellwalker-notebooks-env```
+```bash
+conda install -c anaconda ipykernel
+python -m ipykernel install --user --name=cellwalker-notebooks-env
+```
 
 ## Deactivate the environment
-```conda deactivate```
+```bash
+conda deactivate
+```
 
 ## Launch Jupyter-notebook
-```jupyter notebook```
-On linux, the command is 'jupyter-notebook'.<Br>
+```bash jupyter notebook
+```
+On linux, the command is ```bash jupyter-notebook```<Br>
 Browse src folder inside the folder of the repository.<br>
 Choose the notebook (.ipynb file) which you want to run.<br>
 When the notebook opens, select the environment 'cellwalker-notebooks-env' from the menu option "Kernel>Change kernel".

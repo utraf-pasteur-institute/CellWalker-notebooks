@@ -42,7 +42,7 @@ conda env create -f cellwalker-notebooks-env.yml
 
 You can now go the 'envs' folder inside the Anaconda installation folder using a file browser. Here you will see a subfolder named 'cellwalker-notebooks-env'. This is the folder which holds your environment which will be useful for executing various functionalities in the Jupyter-notebooks.<br>
 
-If you have successfully created the environment using this method then jump to the section 'Make python environment available inside Jupyter-notebooks' to know how to make this environment available as a kernel inside Jupyter-notebooks.
+If you have successfully created the environment using this method then jump to the section **'Make python environment available inside Jupyter-notebooks'** to know how to make this environment available as a kernel inside Jupyter-notebooks.
 
 ## Option 2: Create environment for CellWalker-notebooks
 It is recommended to work inside an environment in order to avoid conflicts of package versions.<br>

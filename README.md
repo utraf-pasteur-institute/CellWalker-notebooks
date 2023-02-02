@@ -30,7 +30,21 @@ This installation is required for the Segmentation_visualizer.ipynb
 ## Download and install Anaconda
 Please visit <a href="https://www.anaconda.com/products/distribution">https://www.anaconda.com/products/distribution</a> to find more information.
 
-## Create environment for CellWalker-notebooks
+There are two options to create Anaconda python environment.<br>
+
+## Option 1: Create environment using .yml file
+Easiest way to create an Anaconda environment is using the .yml file provided in the repository.
+Open the Anaconda Prompt command line window (on Linux just open the terminal window). Navigate to the folder where you downloaded the repository and use the following command to create the anaconda environment.
+
+```
+conda env create -f cellwalker-notebooks-env.yml
+```
+
+You can now go the 'envs' folder inside the Anaconda installation folder using a file browser. Here you will see a subfolder named 'cellwalker-notebooks-env'. This is the folder which holds your environment which will be useful for executing various functionalities in the Jupyter-notebooks.<br>
+
+If you have successfully created the environment using this method then jump to the section 'Make python environment available inside Jupyter-notebooks' to know how to make this environment available as a kernel inside Jupyter-notebooks.
+
+## Option 2: Create environment for CellWalker-notebooks
 It is recommended to work inside an environment in order to avoid conflicts of package versions.<br>
 Open Anaconda Prompt or Anaconda Powershell Prompt and run the following commands.
 
@@ -51,24 +65,26 @@ To remove an environment
 conda remove -n cellwalker-notebooks-env --all
 ```
 
-## Activate the environment
+## Make python environment available inside Jupyter-notebooks
+
+#### Activate the environment
 ```bash
 conda activate cellwalker-notebooks-env
 ```
 Now you will see the prompt changes from 'base' to 'cellwalker-notebooks-env'
 
-## Add ipykernel to environment so that the environment can be used in Jupyter-notebook
+#### Add ipykernel to environment so that the environment can be used in Jupyter-notebook
 ```bash
 conda install -c anaconda ipykernel
 python -m ipykernel install --user --name=cellwalker-notebooks-env
 ```
 
-## Deactivate the environment
+#### Deactivate the environment
 ```bash
 conda deactivate
 ```
 
-## Launch Jupyter-notebook
+#### Launch Jupyter-notebook
 Now you are all set to run the 'Segmentation_visualizer.ipynb' notebook in the Jupyter notebook's user interface. From Anaconda prompt, launch your jupyter notebook GUI.
 ```bash
 jupyter notebook

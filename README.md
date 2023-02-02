@@ -92,7 +92,7 @@ jupyter notebook
 On linux, the command is ```jupyter-notebook```<Br>
 Browse src folder inside the folder of the repository.<br>
 Choose the notebook (.ipynb file) which you want to run. In this case- 'Segmentation_visualizer.ipynb'<br>
-When the notebook opens, select the environment 'cellwalker-notebooks-env' from the menu option **"**Kernel>Change kernel"**.<br>
+When the notebook opens, select the environment 'cellwalker-notebooks-env' from the menu option **"Kernel>Change kernel"**.<br>
 Use Ctrl + Enter or Shift + Enter on the keyboard to execute each cell (or step) in the notebook.<br>
 The notebook is self explanatory and instructions required to run specific steps can be found inside the notebook.
   

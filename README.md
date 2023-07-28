@@ -1,4 +1,4 @@
-# Cellwalker-notebooks
+# CellWalker-notebooks
 
 This repository is a part of the CellWalker pipeline. It contains the IPython notebooks for automated segmentation and segmentation-visualization and export as 3D objects.
 Contents:<br>
